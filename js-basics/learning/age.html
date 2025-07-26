@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+    <p>
+      Enter your DOB: <input type="date" id="dob">
+    </p>
+    <p>
+      Enter the current date: <input type="date" id="curr">
+    </p>
+    <input type="button" onclick="calcAge()" value="Cal Age">
+    <p id="res"></p>
+  </body>
+  <script>
+    function calcAge(){
+      let dob = new Date(document.getElementById("dob").value);
+      let curr = new Date(document.getElementById("curr").value);
+      if(!dob|| !curr|| dob>=curr){
+        document.getElementById("res").innerHTML = `Enter a valid date`;
+        return;
+      }
+      let ageYears = curr.getFullYear() - dob.getFullYear();
+      let ageMonths = curr.getMonth() - dob.getMonth();
+      let ageDay = curr.getDate() - dob.getDate();      
+
+      if(ageDay<0){
+        ageMonths--;
+        let prev = new Date(curr.getFullYear(),curr.getMonth(),0).getDate();
+        ageDay += prev;
+      }
+      if(ageMonths<0){
+        ageYears--;
+        ageMonths+=12;
+      }
+      document.getElementById("res").innerHTML = `${ageYears} years ${ageMonths} months ${ageDay} days`;
+    }
+  </script>
+</html>

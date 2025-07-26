@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+    <p>Countdown</p>
+    <input type="text" placeholder="Enter the time " id="time">
+    <input type="button" value="Start" onclick="countDown()">
+    <p class="count" id="disp"></p>
+    <script>
+      function countDown(){
+        const disp = document.getElementById("disp");
+        let time = parseInt(document.getElementById("time").value);
+        if(time<=0 ){
+          disp.innerHTML = `Enter a valid time`;
+          return;
+        }
+        let interval = setInterval(() => {
+          if (time > 0) {
+            disp.innerHTML = `Time left is ${time}`;
+            time--;
+          } else {
+            disp.innerHTML = "Time's up!";
+            clearInterval(interval);
+          }
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>

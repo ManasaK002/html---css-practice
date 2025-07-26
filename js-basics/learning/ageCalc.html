@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="tutorial8.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="heading">Age Calculator</h1>
+      <h2 class="sub-heading">Enter your date of birth</h2>
+      <input type="date" id="da"> 
+      <h2 class="sub-heading">Enter the current date</h2>
+      <input type="date" id="current"> 
+      <button class="calulator" onclick="calculateAge();">Calculate Age</button>
+      <h3 id="demo"></h3>
+    </div>
+  </body>
+  <script>
+    function calculateAge() {
+    let da = new Date(document.getElementById("da").value);
+    let currentDate = new Date(document.getElementById("current").value);
+
+    if (!da || !currentDate || da >= currentDate) {
+        document.getElementById("demo").innerHTML = "Please enter a valid date range!";
+        return;
+    }
+
+    let ageYears = currentDate.getFullYear() - da.getFullYear();
+    let ageMonths = currentDate.getMonth() - da.getMonth();
+    let ageDays = currentDate.getDate() - da.getDate();
+
+    if (ageDays < 0) {
+        ageMonths--;
+        let prevmo = new Date(currentDate.getFullYear(), currentDate.getMonth(), 0).getDate();
+        ageDays += prevmo;
+    }
+    if (ageMonths < 0) {
+        ageYears--;
+        ageMonths += 12;
+    }
+
+    document.getElementById("demo").innerHTML = 
+        `Your age is <b>${ageYears} years, ${ageMonths} months, and ${ageDays} days</b>.`;
+}
+  </script>
+</html>

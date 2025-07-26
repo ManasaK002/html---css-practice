@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <p>
+      Enter your DOB: <input type="date" id="dob">
+    </p>
+    <p>
+      Enter current date: <input type="date" id="curr">
+    </p>
+    <button id="calc" onclick="calcAge()">Calculate</button>
+    <p id="disp" ></p>
+  </body>
+  <script>
+    function calcAge(){
+      console.log("yes");
+      const dob = new Date(document.getElementById("dob").value);
+      const curr = new Date(document.getElementById("curr").value);
+      const disp = document.getElementById("disp");
+      if(isNaN(dob)||isNaN(curr)||dob>curr){
+        disp.innerHTML = `Enter a valid dob and current date`;
+      }
+
+      let ageYear = curr.getFullYear() - dob.getFullYear();
+      let ageMon = curr.getMonth() - dob.getMonth();
+      let ageDay = curr.getDate() - dob.getDate();
+
+      if(ageDay<0){
+        ageMon--;
+        let prev = new Date(curr.getFullYear(),curr.getMonth(),0).getDate();
+        ageDay +=prev;
+      }
+      if(ageMon<0){
+        ageYear--;
+        ageMon+=12;
+      }
+      disp.innerHTML = `${ageYear},${ageMon},${ageDay}`;
+    }
+  </script>
+</html>

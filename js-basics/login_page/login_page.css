@@ -1,0 +1,32 @@
+body{
+  background: linear-gradient(45deg, rgb(116, 157, 239), rgb(251, 149, 77));
+  display: flex;
+	justify-content: center;
+	align-content: center;
+	height: 100vh;
+  background-repeat: no-repeat;
+}
+.container{
+  background-color: white;
+  margin-top: 50px;
+  width: 400px;
+  height: 80vh;
+  justify-content: center;
+  border-radius: 5px;
+}
+.container h1{
+  background-color: #fff;
+  width: 400px;
+  font-size: 30px;
+  padding-bottom: 20px;
+  text-align: center;
+  border-bottom: 1px solid grey;
+}
+.text-input{
+  padding: 8px;
+  
+}
+input[type=text]{
+  border: none;
+  border-bottom: 1px solid black;
+}

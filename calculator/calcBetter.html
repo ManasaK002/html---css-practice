@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="calcBetter.css">
+	<title>Calculator Better</title>
+</head>
+<body>
+	<div id="Calculator">
+		<input id="disp" readonly>
+		<div id="buttons">
+			<button class="operator" onclick="append('+')">+</button>
+			<button onclick="append('7')">7</button>
+			<button onclick="append('8')">8</button>
+			<button onclick="append('9')">9</button>
+			<button class="operator" onclick="append('-')">-</button>
+			<button onclick="append('4')">4</button>
+			<button onclick="append('5')">5</button>
+			<button onclick="append('6')">6</button>
+			<button class="operator" onclick="append('*')">*</button>
+			<button onclick="append('1')">1</button>
+			<button onclick="append('2')">2</button>
+			<button onclick="append('3')">3</button>
+			<button class="operator" onclick="append('/')">/</button>
+			<button onclick="append('0')">0</button>
+			<button onclick="append('.')">.</button>
+			<button onclick="calculate()">=</button>
+			<button class="operator" onclick="Clear()">C</button>
+		</div>
+	</div>
+	<script type="text/javascript" src="calcBetter.js"></script>
+</body>
+</html>

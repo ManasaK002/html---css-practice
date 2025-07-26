@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Password Validation</title>
+ <style>
+ .error { color: red; }
+ .success { color: green; }
+ input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+input[type=button] {
+  background-color: #012233;
+  color: white;
+}
+
+ </style>
+</head>
+<body bgcolor="yellow">
+ <h1>Password Validation</h1>
+ <form id="passwordForm">
+<label for="username">Enter username:</label>
+ <input type="text" id="username" name="username">
+ <label for="password">Enter Password:</label>
+ <input type="password" id="password" name="password">
+ <input type="button" value="Validate Password" onclick="validatePassword()">
+ <p id="message" class="error"></p>
+ </form>
+ <script>
+  function validatePassword() {
+  const password = document.getElementById("password").value;
+  const message = document.getElementById("message");
+  const minLength = 8;
+    console.log("OG")
+  const hasUpperCase = /[A-Z]/.test(password);
+  const hasLowerCase = /[a-z]/.test(password);
+  const hasNumbers = /\d/.test(password);
+  const hasSpecialChar = /[!@#\$%\^\&*\)\(+=._-]/.test(password);
+  if (password.length < minLength) {
+  message.textContent = "Password must be at least 8 characters long.";
+  message.className = "error";
+  } else if (!hasUpperCase) {
+  message.textContent = "Password must contain at least one uppercase letter.";
+ 
+  } else if (!hasLowerCase) {
+  message.textContent = "Password must contain at least one lowercase letter.";
+  } else if (!hasNumbers) {
+  message.textContent = "Password must contain at least one number.";
+ 
+  } else if (!hasSpecialChar) {
+  message.textContent = "Password must contain at least one special character.";
+ 
+  } else {
+  message.textContent = "Password is valid!";
+  message.className = "success";
+  }
+  }
+  </script>
+ </body>
+ </html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Validation</title>
+    <style>
+      #message{
+        display: none;
+      }
+      .valid{
+        color: green;
+      }
+      .valid::before{
+        content: "✔";
+      }
+      .invalid{
+        color: red;
+      }
+      .invalid::before{
+        content: "✖";
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Form Validation</h3>
+    <container>
+      <form>
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required> 
+        <label for="psw" >Password</label>
+        <input type="text" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+        title="Must contain atleat one number , one digit , one lowecase letter and one uppercase letter" required>
+        <input type="submit" value="Submit">
+      </form>
+    </container>
+    <div id="message">
+      <h3>Password must contain the following: </h3>
+      <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+      <p id="capital" class="invalid">An <b>uppercase</b> letter</p>
+      <p id="digit" class="invalid">A <b>digit</b></p>
+      <p id="length" class="invalid">Minimum <b>8</b> characters</p>
+    </div>
+    <script>
+      var myInput = document.getElementById("psw");
+      var letter = document.getElementById("letter");
+      var capital = document.getElementById("capital");
+      var digit = document.getElementById("digit");
+      var length = document.getElementById("length");
+
+      myInput.onfocus = function(){
+        document.getElementById("message").style.display = "block";
+      }
+      myInput.onblur = function(){
+        document.getElementById("message").style.display = "none";
+      }
+      myInput.onkeyup = function(){
+        var lowercaseLetter = /[a-z]/g;
+        if(myInput.value.match(lowercaseLetter)){
+          letter.classList.remove("invalid");
+          letter.classList.add("valid");
+        }
+        else{
+          letter.classList.remove("valid");
+          letter.classList.add("invalid");
+        }
+        var uppercaseLetter = /[A-Z]/g;
+        if(myInput.value.match(uppercaseLetter)){
+          capital.classList.remove("invalid");
+          capital.classList.add("valid");
+        }
+        else{
+          capital.classList.remove("valid");
+          capital.classList.add("invalid");
+        }
+        var num = /[0-9]/g;
+        if(myInput.value.match(num)){
+          digit.classList.remove("invalid");
+          digit.classList.add("valid");
+        }
+        else{
+          digit.classList.remove("valid");
+          digit.classList.add("invalid");
+        }
+        if(myInput.value.length>=8){
+          length.classList.remove("invalid");
+          length.classList.add("valid");
+        }
+        else{
+          length.classList.remove("valid");
+          length.classList.add("invalid");
+        }
+      }
+    </script>
+  </body>
+</html>

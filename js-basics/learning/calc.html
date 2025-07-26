@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <p>
+      Enter value x : <input type="text" id="x">
+    </p>
+    <p>
+      Enter value y : <input type="text" id="y">
+    </p>
+    <button onclick="add()">+</button>
+    <button onclick="sub()">-</button>
+    <button onclick="mul()">*</button>
+    <button onclick="div()">/</button>
+    <p id="result"></p>
+    <script>
+      
+      function add(){
+        let a = parseInt(document.getElementById("x").value);
+        let b = parseInt(document.getElementById("y").value);
+      //console.log(a);
+        document.getElementById("result").innerHTML = a+b;
+      }
+      function sub(){
+        a = parseInt(document.getElementById("x").value);
+        b = parseInt(document.getElementById("y").value);
+        document.getElementById("result").innerHTML = a- b;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Validation</title>
+    <style>
+      .error{
+        color: red;
+      }
+      .success{
+        color: green;
+      }
+      body{
+        background-color: aqua;
+      }
+      p{
+        display: block;
+        color: blueviolet;
+      }
+    </style>
+  </head>
+  <body>
+    <form class="container">
+      <label for="username">Username</label>
+      <input type="text" class="username" id="username">
+      <label for="pass">Password</label>
+      <input type="password" class="pass" id="pass" required>
+      <input type="button" value="Validate Password" onclick="validatePassword()">
+      <p id="message"></p>
+    </form>
+    <script>
+      window.validatePassword = function() {
+        const myInput = document.getElementById("pass").value;
+        const message = document.getElementById("message");
+        const minLen = 8;
+        const hasLower = /[a-z]/.test(myInput);
+        const hasUpper = /[A-Z]/.test(myInput);
+        const hasNum = /[0-9]/.test(myInput);
+        const hasSpcl = /[!@#$%^&*()_-]/.test(myInput);
+        console.log("yes")
+        if(myInput.length<minLen){
+          message.textContent = "Should have a minimum of 8 characters";
+          message.className = "error";
+        }
+        else if(!hasLower){
+          message.textContent = "Should have at least one lower case character";
+          message.className = "error";
+        }
+        else if(!hasUpper){
+          message.textContent = "Should have at least one upper case character";
+          message.className = "error";
+        }
+        else if(!hasNum){
+          message.textContent = "Should have at least one number ";
+          message.className = "error";
+        }
+        else if(!hasSpcl){
+          message.textContent = "Should have at least one special character";
+          message.className = "error";
+        }
+        else{
+          message.textContent = "Password is valid";
+          message.className = "success";
+        }
+      }
+    </script>
+  </body>
+</html>

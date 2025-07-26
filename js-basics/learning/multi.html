@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <h1>Multiplication table</h1>
+    <p>
+      Enter the number: <input type="text" id="num">
+    </p>
+    <button onclick="genTable()">Generate</button>
+    <p id="table"></p>
+    <script>
+      function genTable(){
+        console.log("yep");
+        let x = document.getElementById("num").value;
+        let tableHTML = `<table><tr><th>${x} X N</th><th>Result</th></tr>`;
+          for(let j=1;j<11;j++){
+            tableHTML += `<tr><td>${x} X ${j}</td><td>${x*j}</td></tr>`;
+          }
+        tableHTML += `</table>`;
+        document.getElementById("table").innerHTML = tableHTML;
+      }
+    </script>
+  </body>
+</html>

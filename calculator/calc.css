@@ -1,0 +1,71 @@
+	body{
+		font-family: Lora,Arial;
+		font-size: 30px;
+	}
+	.calc{
+		width: 310px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: 50px;
+	}
+	.top{
+		height: 90px;
+		width: 298px;
+		border: none;
+		background-color: rgb(48,48,48);
+		color: white;
+		display: flex;
+		align-items: center;
+		justify-content: right;
+		border-top-right-radius: 4px;
+		border-top-left-radius: 4px;
+		padding-right: 10px;
+	}
+	.bottom{
+		background-color: rgb(32,32,32);
+		height: 410px;
+		display: flex;
+		flex-direction: row;
+		border-bottom-right-radius: 4px;
+		border-bottom-left-radius: 4px;
+	}
+	button{
+		width: 70px;
+		height: 70px;
+		margin-top: 10px;
+		margin-right: 5px;
+		border-radius: 35px;
+		border: none;
+		font-size: 30px;
+	}
+	.yellow{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		flex: 1;
+	}
+	.yellow button{
+		margin-left: 7px;
+		background-color:rgb(218, 165, 32);
+		color: white;
+		transition: opacity 0.15s;
+	}
+	.grey{
+		display: flex;
+		flex-direction: column;
+		flex: 3;
+	}
+	.grey button{
+		background-color: rgb(105, 105, 105);
+		color: white;
+		transition: opacity 0.15s;
+	}
+	.yellow:hover button,
+	.grey:hover button{
+		opacity: 0.8;
+		cursor: pointer;
+	}
+	.row{
+		display: flex;
+		flex-direction: row;
+	}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+    <form>
+      <p>
+        First name: <input id="fname" type="text">
+      </p>
+      <p>
+        Last name: <input id="lname" type="text">
+      </p>
+      <p>
+        Address: <textarea rows="4" cols="20" class="address"></textarea>
+      </p>
+      <p>
+        State: 
+        <select name="State">
+          <option value="TN">TN</option>
+          <option value="KE">Kerala</option>
+          <option value="AP">Andhra</option>
+        </select>
+        <fieldset>
+          <legend>Sex</legend>
+          <input type="radio" name="gender" value="male">Male
+          <input type="radio" name="gender" value="female">Female
+        </fieldset>
+      </p>
+      <p>
+        Reg Number: <input type="text" class="reg">
+      </p>
+      <p>
+        DOB: <input type="date">
+      </p>
+      <input type="button" class="submit" value="Submit" onclick="callForm(this.form)">
+    </form>
+    Data entered:
+    <p id="one"></p>
+    <p id="one1"></p>
+    <script>
+      function callForm(form){
+        const first = form.elements["fname"].value;
+        const sec = document.getElementsByClassName("lname").value;
+        if(first==""){
+          alert("Fill first name");
+        }
+        document.getElementById("one").innerHTML = first;
+        document.getElementById("one1").innerHTML = form.elements["lname"].value;
+        form.reset();
+        form.elements["fname"].focus();
+      }
+    </script>
+  </body>
+</html>

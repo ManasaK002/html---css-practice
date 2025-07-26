@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <p>Temperature Converter</p>
+    <input type="text" id="cel" placeholder="Celsius">
+    <input type="button" value="Convert" onclick="convert()">
+    <p id="fahr"></p>
+  </body>
+  <script>
+    function convert(){
+      const cel = parseInt(document.getElementById("cel").value);
+      const disp = document.getElementById("fahr");
+      const fahr = (cel*9/5)+32;
+      disp.innerHTML = `The temp in fahr is ${fahr}`;
+    }
+  </script>
+</html>

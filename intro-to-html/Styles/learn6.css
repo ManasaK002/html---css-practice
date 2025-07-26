@@ -1,0 +1,15 @@
+	p{
+		font-family: Montserrat;
+		text-align: center;
+		}
+	.heading{
+		font-size: 40px;
+		font-weight: bold;
+	}
+	.next{
+		font-size: 20px;
+	}
+	.sub:hover{
+		text-decoration: underline;
+		cursor: pointer;
+	}

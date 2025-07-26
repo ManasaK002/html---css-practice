@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <form>
+    <p>
+      First name: <input type="text" id="fname">
+    </p>
+    <p>
+      Last name: <input type="text" id="lname">
+    </p>
+    <p>
+      Address: <textarea rows="3" cols="20"></textarea>
+    </p>
+    <select>
+      <option>TN</option>
+      <option>Kerala</option>
+    </select>
+    <fieldset>
+      <legend>Sex</legend>
+      <input type="radio">male
+      <input type="radio">female
+    </fieldset>
+    <input type="button" value="Submit" onclick="callForm(this.form)">
+  </form>
+  Data Entered;
+  <p id="disp"></p>
+  <p id="disp2"></p>
+  <script>
+    function callForm(form){
+      console.log("Yes");
+      const fname = form.elements["fname"].value;
+      const lname = form.elements["lname"].value;
+      const disp = document.getElementById("disp");
+      const disp2 = document.getElementById("disp2");
+      if(fname=="")
+        alert("Enter the first name");
+        document.getElementById("disp").innerHTML = fname;
+        document.getElementById("disp2").innerHTML = form.elements["lname"].value;
+      form.reset();
+      form.elements["fname"].focus();
+    }
+  </script>
+  </body>
+</html>

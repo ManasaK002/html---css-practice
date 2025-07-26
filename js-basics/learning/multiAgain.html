@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+    <p>
+      Enter the number: <input type="text" id="num">
+    </p>
+    <button onclick="generate()">Generate</button>
+    <p id="tableDisp"></p>
+  </body>
+  <script>
+    function generate(){
+      const num = parseInt(document.getElementById("num").value);
+      let tableHTML = `<table><tr><th>${num} X N</th><th>Result</th></tr>`;
+      for(let i=1;i<=10;i++){
+        tableHTML += `<tr><th>${num} X ${i}</th><th>${num*i}</th></tr>`;
+      }
+      tableHTML +=`</table>`;
+      document.getElementById("tableDisp").innerHTML = tableHTML;
+    }
+  </script>
+</html>

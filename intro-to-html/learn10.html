@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		.input1,
+		.input2{
+			width: 100px;
+			height: 30px;
+			border-radius: 5px;
+			border: solid;
+			border-color: grey;
+			border-width: 0.5px;
+		}
+		.input3{
+			display: block;
+			width: 210px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			height: 30px;
+			border-radius: 5px;
+			border: solid;
+			border-color: grey;
+			border-width: 0.5px;
+		}
+		input::placeholder{
+			padding-left: 5px;
+		}
+		button{
+			width: 215px;
+			border: none;
+			background-color: lightblue;
+			color: white;
+			height: 35px;
+			border-radius: 5px;
+		}
+	</style>
+</head>
+<body>
+	<input class="input1" type="text" placeholder="First name">
+	<input class="input2" type="text" placeholder="Last name">
+	<input class="input3" type="text" placeholder="Email">
+	<button>
+		Sign Up
+	</button>
+</body>
+</html>

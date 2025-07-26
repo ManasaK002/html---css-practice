@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <style>
+      .container{
+        display:grid;
+        grid-template-columns: 49% 49%;
+        grid-template-rows: 10em 10em;
+        gap:1%;
+        background-color: aliceblue;
+        margin:2em;
+        padding: 2em;
+      }
+      .cell{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        background-color: blue;
+        font-size: 3em;
+      }
+    </style>
+  </head>
+  <body id="body" onload="registerAllEvents()">
+    <div class="container">
+      <div id="divA" class="cell">A</div>
+      <div id="divB" class="cell">B</div>
+      <div id="divC" class="cell">C</div>
+      <div id="divD" class="cell">D</div>
+    </div>
+    <script>
+      function registerAllEvents() {
+        document.getElementById("divA").addEventListener("click",handleDivA);
+        document.getElementById("divB").addEventListener("mousemove",handleDivB);
+        document.getElementById("divC").addEventListener("mouseenter",handleDivC_1);
+        document.getElementById("divC").addEventListener("mouseleave",handleDivC_2);
+        document.getElementById("divD").addEventListener("dblclick",handleDivD_1);
+      }
+      function handleDivA(evt){
+        const elem=evt.target;
+        if(elem.style.backgroundColor!='silver'){
+          elem.setAttribute("style","background-color:silver");
+        }
+        else{
+          elem.setAttribute("style","background-color:gold");
+
+        }
+      }
+      function handleDivB(evt){
+        const elem=evt.target;
+        switch(elem.style.backgroundColor){
+          case "blue":
+          elem.setAttribute("style","background-color:lime");
+          break;
+          case "line":
+          elem.setAttribute("style","background-color:red");
+          break;
+          case "red":
+          elem.setAttribute("style","background-color:yellow");
+          break;
+          case "yellow":
+          elem.setAttribute("style","background-color:green");
+          break;
+          default:
+          case "line":
+          elem.setAttribute("style","background-color:blue");
+          break;
+        }
+      }
+      function handleDivC_1(evt){
+        evt.target.setAttribute("style","background-color:red");
+      }
+      function handleDivC_2(evt){
+        evt.target.setAttribute("style","background-color:green");
+      }
+      function handleDivD_1(evt){
+        evt.target.setAttribute("style","background-color:pink");
+      }
+    </script>
+  </body>
+</html>
