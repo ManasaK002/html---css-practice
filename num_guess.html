@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <p>Guess the number between 1 and 100</p>
+    <input type="text" placeholder="Enter the number" id="num">
+    <button onclick="guess()">Check</button>
+    <p id="disp"></p>
+  </body>
+  <script>
+    function guess(){
+      console.log("yes");
+      const guessed = parseInt(document.getElementById("num").value);
+      const disp = document.getElementById("disp");
+      const rand = Math.floor(Math.random()*100)+1;
+      if(isNaN(guessed)||guessed<1||guessed>100){
+        disp.innerHTML = `Enter a valid number`;
+      }
+      if(guessed == rand){
+        disp.innerHTML = `Yay you guessed it`;
+      }
+      else if(guessed>rand){
+        disp.innerHTML = `Too high! Try Again`;
+      }
+      else if(guessed<rand){
+        disp.innerHTML = `Too low! Try Again`;
+      }
+    }
+  </script>
+</html>

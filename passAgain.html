@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .invalid{
+        color: red;
+      }
+      .valid{
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Username :<input type="text" id="user">
+    </p>
+    <p>
+      Password : <input type="password" id="pass">
+    </p>
+    <button onclick="validate()">Validate</button>
+    <p id="message"></p>
+  </body>
+  <script>
+    function validate(){
+      console.log("yes");
+      const pass = document.getElementById("pass").value;
+      const user = document.getElementById("user").value;
+      if(user==""){
+        alert("Fill username");
+      }
+
+      const minLength = 8;
+      const hasLower = /[a-z]/.test(pass);
+      const hasUpper = /[A-Z]/.test(pass);
+      const hasNum = /[0-9]/.test(pass);
+      const hasSpcl = /[!@#$%^*]/.test(pass);
+      if(pass.length<minLength){
+        document.getElementById("message").innerHTML = `Must have min 8 char`;
+        message.className = "invalid";
+      }
+      else if(!hasLower){
+        document.getElementById("message").innerHTML = `Must have atleast one lower char`;
+        message.className = "invalid";
+      }
+      else if(!hasUpper){
+        document.getElementById("message").innerHTML = `Must have atleast one upper char`;
+        message.className = "invalid";
+      }
+      else if(!hasNum){
+        document.getElementById("message").innerHTML = `Must have atleast one number char`;
+        message.className = "invalid";
+      }
+      else if(!hasSpcl){
+        document.getElementById("message").innerHTML = `Must have atleast one spcl char`;
+        message.className = "invalid";
+      }
+      else{
+        document.getElementById("message").innerHTML = `Password is valid`;
+        message.className = "valid";
+      }
+    }
+  </script>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dice roll</title>
+    <link rel="stylesheet" href="dice_roll.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  </head>
+  <body>
+  <div class="container">
+    <h1>Dice Roll Simulation</h1>
+    <div class="dice" id="dice">&#9860</div>
+    <button onclick="randomDice();">Roll Dice</button>
+    <div class="history" id="history">
+      <div class="list">
+      </div>
+
+    </div>
+  </div>
+  <div class="res" id="res" style="display: none;">
+    <button class="restart" onclick="restartDice();">Restart</button>
+  </div>
+  <script src="dice_roll.js"></script>
+  </body>
+</html>
